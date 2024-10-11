@@ -11,8 +11,8 @@ app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}})
 
 # Set the Google API key
-GOOGLE_API_KEY = "AIzaSyDnio5ITdIdAp0gxV1mEpe_o6igx0RwOxQ"
-genai.configure(api_key=GOOGLE_API_KEY)
+# GOOGLE_API_KEY = "AIzaSyDnio5ITdIdAp0gxV1mEpe_o6igx0RwOxQ"
+# genai.configure(api_key=GOOGLE_API_KEY)
 
 @app.route('/run-scorecard', methods=['POST'])
 def run_scorecard():
