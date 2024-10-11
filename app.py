@@ -8,7 +8,7 @@ import os
 app = Flask(__name__)
 
 # Enable CORS for all routes
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 # Set the Google API key
 GOOGLE_API_KEY = "AIzaSyDnio5ITdIdAp0gxV1mEpe_o6igx0RwOxQ"
