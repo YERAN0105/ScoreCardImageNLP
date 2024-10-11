@@ -74,9 +74,15 @@ def run_scorecard():
     # Convert DataFrame to JSON and return as a response
     return jsonify(df.to_dict(orient="records"))
 
+# if __name__ == "__main__":
+#     # Create uploads folder if it doesn't exist
+#     uploads_dir = os.path.join(os.getcwd(), 'uploads')
+#     if not os.path.exists(uploads_dir):
+#         os.makedirs(uploads_dir)
+#     app.run(host='0.0.0.0', port=int(os.getenv('PORT', 5000)), debug=True)
+
 if __name__ == "__main__":
     # Create uploads folder if it doesn't exist
-    uploads_dir = os.path.join(os.getcwd(), 'uploads')
-    if not os.path.exists(uploads_dir):
-        os.makedirs(uploads_dir)
-    #app.run(host='0.0.0.0', port=int(os.getenv('PORT', 5000)), debug=True)
+    if not os.path.exists('uploads'):
+        os.makedirs('uploads')
+    app.run(debug=True)
