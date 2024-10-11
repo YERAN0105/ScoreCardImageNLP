@@ -11,8 +11,8 @@ app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}})
 
 # Set the Google API key
-# GOOGLE_API_KEY = "AIzaSyDnio5ITdIdAp0gxV1mEpe_o6igx0RwOxQ"
-# genai.configure(api_key=GOOGLE_API_KEY)
+GOOGLE_API_KEY = "AIzaSyDnio5ITdIdAp0gxV1mEpe_o6igx0RwOxQ"
+genai.configure(api_key=GOOGLE_API_KEY)
 
 @app.route('/run-scorecard', methods=['POST'])
 def run_scorecard():
@@ -79,4 +79,4 @@ if __name__ == "__main__":
     uploads_dir = os.path.join(os.getcwd(), 'uploads')
     if not os.path.exists(uploads_dir):
         os.makedirs(uploads_dir)
-    app.run(host='0.0.0.0', port=int(os.getenv('PORT', 5000)), debug=True)
+    #app.run(host='0.0.0.0', port=int(os.getenv('PORT', 5000)), debug=True)
